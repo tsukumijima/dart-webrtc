@@ -37,7 +37,7 @@ class RTCDataChannelWeb extends RTCDataChannel {
   String? get label => _jsDc.label;
 
   @override
-  int? get bufferedAmount => _jsDc.bufferedAmount;
+  Future<int?> get bufferedAmount => Future.value(_jsDc.bufferedAmount);
 
   final _stateChangeController =
       StreamController<RTCDataChannelState>.broadcast(sync: true);
